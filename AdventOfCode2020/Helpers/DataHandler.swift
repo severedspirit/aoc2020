@@ -10,6 +10,7 @@ import Foundation
 struct DataHandler {
     enum File: String {
         case day01p1 = "Day01p1"
+        case day02p1 = "Day02p1"
     }
     
     static func getFileContents(for file: File) -> String {
