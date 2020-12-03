@@ -31,8 +31,8 @@ struct Day02 {
                 let characterCount = password.filter({ $0 == characterValue }).count
                 return characterCount >= instruction1 && characterCount <= instruction2
             case .officialToboggan:
-                let check1 = password[password.index(password.startIndex, offsetBy: instruction1 - 1)] == characterValue
-                let check2 = password[password.index(password.startIndex, offsetBy: instruction2 - 1)] == characterValue
+                let check1 = password.character(at: instruction1 - 1) == characterValue
+                let check2 = password.character(at: instruction2 - 1) == characterValue
                 return check1 != check2
             }
         }
