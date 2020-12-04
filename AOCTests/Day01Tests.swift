@@ -1,5 +1,5 @@
 //
-//  AOCTests.swift
+//  Day01Tests.swift
 //  AOCTests
 //
 //  Created by Apple  on 01/12/2020.
@@ -7,7 +7,7 @@
 
 import XCTest
 
-class AOCTests: XCTestCase {
+class Day01Tests: XCTestCase {
     func testPart1Example() {
         XCTAssertEqual(Day01.getMultipliedValue(from: [1721, 979, 366, 299, 675, 1456], thatAddUpTo: 2020, size: 2), 514579)
     }

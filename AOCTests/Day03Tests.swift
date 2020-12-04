@@ -35,7 +35,7 @@ class Day03Tests: XCTestCase {
         XCTAssertEqual(Day03.part2Slopes.compactMap({ Day03.getTreesHit(from: $0, data: Self.exampleData) }).reduce(1, *),336)
     }
     
-    func testPart2result() {
+    func testPart2Result() {
         XCTAssertEqual(Day03.generatePart2Value(), 2138320800)
     }
 }
