@@ -13,6 +13,7 @@ struct DataHandler {
         case day02p1 = "Day02p1"
         case day03p1 = "Day03p1"
         case day04p1 = "Day04p1"
+        case day05p1 = "Day05p1"
     }
     
     static func getFileContents(for file: File) -> String {

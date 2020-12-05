@@ -14,4 +14,7 @@ print(Day02.generatePart2Value())
 print(Day03.generatePart1Value())
 print(Day03.generatePart2Value())
 print(Day04.generatePart1Value())
-print(Day04.generatePart2Value())so
+print(Day04.generatePart2Value())
+print(Day05.generatePart1Value())
+print(Day05.generatePart2Value())
+
