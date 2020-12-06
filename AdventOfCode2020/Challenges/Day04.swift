@@ -134,22 +134,9 @@ struct Day04 {
     }
     
     static func countValidPassports(from data: String, validation: ValueValidation) -> Int {
-        return Day04.splitDataIntoPassportGroups(data: data)
+        return StringHelper.splitDataIntoGroups(data: data)
             .compactMap({ Day04.getPassportFields(from:$0) })
             .compactMap({ Day04.getPassportStatus(from: $0, validation: validation) })
             .filter({ $0 == .normalPassport || $0 == .northPolePassport }).count
-    }
-
-    private static func splitDataIntoPassportGroups(data: String) -> [String] {
-        let seperator: String = "*"
-        if data.contains(seperator) {
-            // If the seperator is used in the data just kill the command as the split will fail
-            fatalError()
-        }
-        return data
-            .replacingOccurrences(of: "\n\n", with: seperator)
-            .replacingOccurrences(of: "\n", with: " ")
-            .split(separator: Character(seperator))
-            .compactMap({ String($0) })
     }
 }
