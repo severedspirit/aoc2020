@@ -20,7 +20,7 @@ struct Day06 {
     
     static func getTotalYesAnswers(fromAll data: String) -> Int {
         let split = StringHelper.splitDataIntoGroups(data: data).compactMap({ $0.replacingOccurrences(of: " ", with: seperator)})
-        let values = split.compactMap({ getTotalYesAnswers(fromGroup: $0) })
+        let values = split.compactMap({ getPossibleAnswers(from: $0).count })
         let total = values.reduce(0, +)
         return total
     }
@@ -49,17 +49,6 @@ struct Day06 {
             }
         }
         return unaminousAnswers
-    }
-    
-    private static func getTotalYesAnswers(fromGroup data: String) -> Int {
-        var charsFound: [String.Element] = []
-        let invalidCharacters = [String.Element(seperator)]
-        for char in data {
-            guard !invalidCharacters.contains(char) else { continue }
-            guard !charsFound.contains(char) else { continue }
-            charsFound.append(char)
-        }
-        return charsFound.count
     }
     
     private static func getPossibleAnswers(from data: String) -> [String.Element] {
