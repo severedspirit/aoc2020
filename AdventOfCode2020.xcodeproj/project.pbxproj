@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181354432580069C002EDDC0 /* Day08p1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 181354422580069C002EDDC0 /* Day08p1.txt */; };
+		1813544825800CC4002EDDC0 /* Day08Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813544725800CC4002EDDC0 /* Day08Tests.swift */; };
+		1813544D25800FC3002EDDC0 /* Day08.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813544C25800FC3002EDDC0 /* Day08.swift */; };
+		1813545125800FD5002EDDC0 /* Day08.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813544C25800FC3002EDDC0 /* Day08.swift */; };
+		18135461258010D3002EDDC0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D55C82576C9700072D61D /* main.swift */; };
 		182E61562579478900251513 /* Day03p1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 182E61552579478900251513 /* Day03p1.txt */; };
 		182E615E25794D7700251513 /* Day03Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E615D25794D7700251513 /* Day03Tests.swift */; };
 		182E616325794D9600251513 /* Day03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E616225794D9600251513 /* Day03.swift */; };
@@ -23,7 +28,6 @@
 		1860818E257D1C2E00A21D07 /* Day06.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860818C257D1C2E00A21D07 /* Day06.swift */; };
 		18608193257D1C5B00A21D07 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18608192257D1C5B00A21D07 /* StringHelper.swift */; };
 		18608194257D1C5B00A21D07 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18608192257D1C5B00A21D07 /* StringHelper.swift */; };
-		186D55C92576C9710072D61D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D55C82576C9700072D61D /* main.swift */; };
 		186D5604257710750072D61D /* Day01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D55EB25770E770072D61D /* Day01Tests.swift */; };
 		186D5624257712A00072D61D /* AdventOfCode2020 in Sources */ = {isa = PBXBuildFile; fileRef = 186D55C52576C9700072D61D /* AdventOfCode2020 */; };
 		186D5627257712C40072D61D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186D55C82576C9700072D61D /* main.swift */; };
@@ -57,13 +61,6 @@
 			remoteGlobalIDString = 186D55C42576C9700072D61D;
 			remoteInfo = AdventOfCode2020;
 		};
-		186D563B25781B1C0072D61D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 186D55BD2576C9700072D61D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 186D562D25781A3C0072D61D;
-			remoteInfo = AOCBundle;
-		};
 		186D565425781DE20072D61D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 186D55BD2576C9700072D61D /* Project object */;
@@ -86,6 +83,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		181354422580069C002EDDC0 /* Day08p1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day08p1.txt; sourceTree = "<group>"; };
+		1813544725800CC4002EDDC0 /* Day08Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day08Tests.swift; sourceTree = "<group>"; };
+		1813544C25800FC3002EDDC0 /* Day08.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day08.swift; sourceTree = "<group>"; };
 		182E61552579478900251513 /* Day03p1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day03p1.txt; sourceTree = "<group>"; };
 		182E615D25794D7700251513 /* Day03Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day03Tests.swift; sourceTree = "<group>"; };
 		182E616225794D9600251513 /* Day03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day03.swift; sourceTree = "<group>"; };
@@ -186,6 +186,7 @@
 				18D6FF7C257C0A2500BCFFC6 /* Day05p1.txt */,
 				18608182257D0E1700A21D07 /* Day06p1.txt */,
 				18386DBC257EB84F007FEC8A /* Day07p1.txt */,
+				181354422580069C002EDDC0 /* Day08p1.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -200,6 +201,7 @@
 				18D6FF81257C14E700BCFFC6 /* Day05.swift */,
 				1860818C257D1C2E00A21D07 /* Day06.swift */,
 				18386DC1257ED1E3007FEC8A /* Day07.swift */,
+				1813544C25800FC3002EDDC0 /* Day08.swift */,
 			);
 			path = Challenges;
 			sourceTree = "<group>";
@@ -215,6 +217,7 @@
 				18D6FF77257C034100BCFFC6 /* Day05Tests.swift */,
 				18608187257D1A0C00A21D07 /* Day06Tests.swift */,
 				18386DC6257ED21A007FEC8A /* Day07Tests.swift */,
+				1813544725800CC4002EDDC0 /* Day08Tests.swift */,
 			);
 			path = AOCTests;
 			sourceTree = "<group>";
@@ -259,7 +262,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				186D563C25781B1C0072D61D /* PBXTargetDependency */,
 			);
 			name = AdventOfCode2020;
 			productName = AdventOfCode2020;
@@ -355,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181354432580069C002EDDC0 /* Day08p1.txt in Resources */,
 				182E61562579478900251513 /* Day03p1.txt in Resources */,
 				1889C61025782F0700C5A87E /* Day02p1.txt in Resources */,
 				18608183257D0E1700A21D07 /* Day06p1.txt in Resources */,
@@ -372,15 +375,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18135461258010D3002EDDC0 /* main.swift in Sources */,
 				18D6FF6C257AEBDB00BCFFC6 /* Day04.swift in Sources */,
 				1889C61F2578372700C5A87E /* String.SubSequence.swift in Sources */,
 				18608193257D1C5B00A21D07 /* StringHelper.swift in Sources */,
 				186D564225781BBB0072D61D /* DataHandler.swift in Sources */,
-				186D55C92576C9710072D61D /* main.swift in Sources */,
 				1889C6152578318600C5A87E /* Day02.swift in Sources */,
 				18D6FF82257C14E800BCFFC6 /* Day05.swift in Sources */,
 				1860818D257D1C2E00A21D07 /* Day06.swift in Sources */,
 				182E616C25794E3600251513 /* String.swift in Sources */,
+				1813544D25800FC3002EDDC0 /* Day08.swift in Sources */,
 				186D565E25781FE10072D61D /* Day01.swift in Sources */,
 				182E616325794D9600251513 /* Day03.swift in Sources */,
 				18386DC2257ED1E3007FEC8A /* Day07.swift in Sources */,
@@ -411,6 +415,8 @@
 				186D5627257712C40072D61D /* main.swift in Sources */,
 				1889C60725782DE900C5A87E /* Day02Tests.swift in Sources */,
 				1889C60B25782EB300C5A87E /* Day01.swift in Sources */,
+				1813545125800FD5002EDDC0 /* Day08.swift in Sources */,
+				1813544825800CC4002EDDC0 /* Day08Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,11 +434,6 @@
 			isa = PBXTargetDependency;
 			target = 186D55C42576C9700072D61D /* AdventOfCode2020 */;
 			targetProxy = 186D55F925770F250072D61D /* PBXContainerItemProxy */;
-		};
-		186D563C25781B1C0072D61D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 186D562D25781A3C0072D61D /* AOCBundle */;
-			targetProxy = 186D563B25781B1C0072D61D /* PBXContainerItemProxy */;
 		};
 		186D565525781DE20072D61D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
