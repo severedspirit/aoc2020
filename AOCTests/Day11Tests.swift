@@ -7,7 +7,7 @@
 
 import XCTest
 
-class Day12Tests: XCTestCase {
+class Day11Tests: XCTestCase {
 
     let data = """
     L.LL.LL.LL
