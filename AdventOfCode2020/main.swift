@@ -39,3 +39,6 @@ print(Day15.generatePart1Value())
 print(Day15.generatePart2Value())
 print(Day16.generatePart1Value())
 print(Day16.generatePart2Value())
+print(Day17.generatePart1Value())
+print(Day17.generatePart2Value())
+ 

@@ -14,7 +14,7 @@ struct Day11 {
         case version2
     }
     
-    enum CharacterRepresentation: Equatable {
+    enum CharacterRepresentation: Equatable, CharacterRepresentationProtocol {
         case emptySeat
         case occupiedSeat
         case floor
@@ -35,30 +35,6 @@ struct Day11 {
             default: fatalError()
             }
         }
-        
-        static func generate(from data: [CharacterRepresentation], at location: Location, width: Int) -> CharacterRepresentation {
-            let index = (width * location.y) + location.x
-            return data[index]
-            
-        }
-    }
-
-    
-    struct Location {
-        let x: Int
-        let y: Int
-        
-        func getIndex(width: Int) -> Int {
-            return (width * self.y) + self.x
-        }
-        
-        func isWithBounds(width: Int, height: Int) -> Bool {
-            return x >= 0 && y >= 0 && x < width && y < height
-        }
-        
-        func moveBy(location: Location) -> Location {
-            return .init(x: self.x + location.x, y: self.y + location.y)
-        }
     }
     
     enum Validation {
@@ -77,10 +53,10 @@ struct Day11 {
         return applyBasicSeatingRules(data: data, version: .version2)
     }
     
-    static func canVisiblySeeChairs(amount: Int, from data: [CharacterRepresentation], width: Int, height: Int, currentLocation location: Location) -> Bool {
+    static func canVisiblySeeChairs(amount: Int, from data: [CharacterRepresentation], width: Int, height: Int, currentLocation location: Location2D) -> Bool {
         
         var timesFoundChair = 0
-        for locationPostion in possibleDirections {
+        for locationPostion in Location2D.possibleDirections {
             
             var newLocation = location.moveBy(location: locationPostion)
             
@@ -106,21 +82,12 @@ struct Day11 {
         return timesFoundChair >= amount
     }
     
-    static let possibleDirections: [Location] = [
-        .init(x: -1, y: -1), .init(x: 0, y: -1), .init(x: 1, y: -1),
-        .init(x: -1, y: 0),                      .init(x: 1, y: 0),
-        .init(x: -1, y: 1),  .init(x: 0, y: 1),  .init(x: 1, y: 1)
-    ]
-    
-    static func isCheckValid(for validation: Validation, from data: [CharacterRepresentation], width: Int, height: Int, currentLocation location: Location) -> Bool {
-        let fromX = location.x - 1 >= 0 ? location.x - 1 : 0
-        let toX = location.x + 1 < width ? location.x + 1 : width - 1
-        let fromY = location.y - 1 >= 0 ? location.y - 1 : 0
-        let toY = location.y + 1 < height ? location.y + 1 : height - 1
+    static func isCheckValid(for validation: Validation, from data: [CharacterRepresentation], width: Int, height: Int, currentLocation location: Location2D) -> Bool {
+        let (xRange, yRange) = location.getValidLocationsXAndYRanges(width: width, height: height)
         
         var occupiedSeats = 0
-        for x in fromX...toX {
-            for y in fromY...toY {
+        for x in xRange {
+            for y in yRange {
                 guard !(x == location.x && y == location.y) else { continue }
                 
                 let rep = CharacterRepresentation.generate(from: data, at: .init(x: x, y: y), width: width)
@@ -156,7 +123,7 @@ struct Day11 {
         return (width, height)
     }
     
-    static func updateLayout(from charactersBefore: [CharacterRepresentation], version: SupportVersion, width: Int, height: Int, allLocations: [Location]) -> [CharacterRepresentation] {
+    static func updateLayout(from charactersBefore: [CharacterRepresentation], version: SupportVersion, width: Int, height: Int, allLocations: [Location2D]) -> [CharacterRepresentation] {
         
         var charactersAfter = charactersBefore
 
@@ -193,10 +160,10 @@ struct Day11 {
         
         // Pre-generate required vars
         let (width, height) = getWidthAndHeight(from: data)
-        var allLocations: [Location] = []
+        var allLocations: [Location2D] = []
         for y in 0..<height {
             for x in 0..<width {
-                allLocations.append(Location(x: x, y: y))
+                allLocations.append(Location2D(x: x, y: y))
             }
         }
         let charactersBefore = Array(data.replacingOccurrences(of: "\n", with: "")).compactMap({ CharacterRepresentation.generate(from: $0) })
